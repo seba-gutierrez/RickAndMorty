@@ -1,1 +1,153 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.text-stroke-green-500 {
+  -webkit-text-stroke: 1px #23ff74;
+  text-stroke: 1px #23ff74;
+}
+
+.text-shadow-green {
+  font-family: Audiowide;
+  color: white;
+  text-shadow:
+    1px 1px 0 #22c55e,
+    0 0 25px #22c55e,
+    0 0 5px #22c55e;
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow:
+      1px 1px 0 #22c55e,
+      0 0 25px #22c55e,
+      0 0 5px #22c55e;
+  }
+
+  50% {
+    text-shadow:
+      1px 1px 10px #22c55e,
+      0 0 50px #22c55e,
+      0 0 20px #22c55e;
+  }
+
+  100% {
+    text-shadow:
+      1px 1px 0 #22c55e,
+      0 0 25px #22c55e,
+      0 0 5px #22c55e;
+  }
+}
+
+.personajes-section {
+  position: relative;
+  background-image: url('/morty_portal.png');
+  background-color: black;
+  opacity: 0.9;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.lista-episodios{
+  background-color: black
+}
+
+.episodios-section {
+  position: relative;
+  background-image: url('/fondo_episodios.png');
+  background-color: black;
+  opacity: 0.;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer i {
+  margin-right: 5px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #0bff30;  /* Cambia el color al pasar el mouse */
+  text-decoration: underline;
+}
+
+.footer i {
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin-right: 20px;
+}

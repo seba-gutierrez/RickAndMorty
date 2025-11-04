@@ -1,0 +1,56 @@
+<div class="personajes-section relative bg-cover bg-center bg-no-repeat py-16">
+    <br>
+    <h1 id="personajes" class="text-3xl font-bold text-white lg:text-6xl text-center mb-8 text-shadow-green">
+        Personajes
+    </h1>
+    <!-- Formulario de búsqueda -->
+    <form (ngSubmit)="buscarPersonaje()" class="max-w-md mx-auto bg-white bg-opacity-75 p-6 rounded-lg shadow-lg">
+        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+            Search
+        </label>
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+            </div>
+            <input type="search" id="default-search"
+                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Buscar personajes..." [(ngModel)]="nombrePersonajeIngresar" name="nombrePersonaje" required
+                (input)="buscarSugerencias()" />
+
+            <!-- Lista de sugerencias -->
+            <ul *ngIf="sugerencias.length > 0"
+                class="absolute w-full bg-white shadow-md mt-1 rounded-md max-h-60 overflow-y-auto">
+                <li *ngFor="let sugerencia of sugerencias" class="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                    (click)="seleccionarSugerencia(sugerencia)">
+                    {{ sugerencia }}
+                </li>
+            </ul>
+            <button type="submit"
+                class="text-white absolute right-2.5 bottom-2.5 bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Buscar
+            </button>
+        </div>
+    </form>
+
+    <!-- Contenedor principal ajustado sin min-h-screen -->
+    <div *ngIf="dataPersonaje?.image" class="flex justify-center items-center bg-center py-16 px-4 shadow-xl/30">
+        <!-- Tarjeta -->
+        <a href="#"
+            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-lg md:flex-row md:max-w-2xl lg:max-w-3xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img *ngIf="dataPersonaje?.image"
+                class="object-cover w-full rounded-t-lg h-120 md:h-96 md:w-72 md:rounded-none md:rounded-s-lg"
+                [src]="dataPersonaje.image" alt="Imagen del personaje">
+            <div class="flex flex-col justify-between p-6 leading-normal">
+                <h3 class="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Nombre: {{
+                    dataPersonaje.name }}</h3>
+                <h4 class="mb-4 font-normal text-gray-700 dark:text-gray-400">Especie: {{ dataPersonaje.species }}</h4>
+                <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Estado: {{ dataPersonaje.status }}</p>
+                <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">Género: {{ dataPersonaje.gender }}</p>
+            </div>
+        </a>
+    </div>
+</div>
