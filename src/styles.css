@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.Wubba-Lubba{
+  background-image: url('./assets/rick_morty.png');
+}
+
 
 .text-stroke-green-500 {
   -webkit-text-stroke: 1px #23ff74;
@@ -44,7 +48,7 @@
 
 .personajes-section {
   position: relative;
-  background-image: url('/morty_portal.png');
+  background-image: url('./assets/morty_portal.png');
   background-color: black;
   opacity: 0.9;
   background-size: cover;
@@ -63,7 +67,7 @@ html {
 
 .episodios-section {
   position: relative;
-  background-image: url('/fondo_episodios.png');
+  background-image: url('./assets/fondo_episodios.png');
   background-color: black;
   opacity: 0.;
   background-size: cover;
